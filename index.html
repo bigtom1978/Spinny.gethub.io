@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Emporium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2a4d2f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .snake-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .snake-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            width: 250px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2a4d2f;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Snake Emporium</h1>
+    <p>Your one-stop shop for exotic snakes</p>
+</header>
+
+<div class="container">
+    <h2>Available Snakes</h2>
+    <div class="snake-list">
+        <div class="snake-item">
+            <h3>Ball Python</h3>
+            <p>Price: $200</p>
+        </div>
+        <div class="snake-item">
+            <h3>Corn Snake</h3>
+            <p>Price: $150</p>
+        </div>
+        <div class="snake-item">
+            <h3>King Cobra</h3>
+            <p>Price: $1000</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Contact us at <strong>info@snakeemporium.com</strong></p>
+</footer>
+
+</body>
+</html>
