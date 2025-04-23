@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Emporium</title>
+    <title>BigT Pullz - Buy & Sell Sports Cards</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,10 +13,10 @@
             color: #333;
         }
         header {
-            background-color: #2a4d2f;
+            background-color: #282828;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
         }
         .container {
             width: 80%;
@@ -26,56 +24,111 @@
             padding: 20px;
             text-align: center;
         }
-        .snake-list {
+        .cards-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            padding: 20px;
         }
-        .snake-item {
+        .card-item {
             background: white;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
             width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card-item:hover {
+            transform: scale(1.05);
         }
         footer {
             text-align: center;
             padding: 15px;
-            background-color: #2a4d2f;
+            background-color: #282828;
             color: white;
             margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #cardForm {
+            margin-top: 20px;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Welcome to Snake Emporium</h1>
-    <p>Your one-stop shop for exotic snakes</p>
+    <h1>Welcome to BigT Pullz</h1>
+    <p>Your premium source for sports card collectibles!</p>
 </header>
 
 <div class="container">
-    <h2>Available Snakes</h2>
-    <div class="snake-list">
-        <div class="snake-item">
-            <h3>Ball Python</h3>
-            <p>Price: $200</p>
+    <h2>Featured Cards</h2>
+    <div class="cards-list" id="cardsList">
+        <div class="card-item">
+            <h3>LeBron James Rookie Card</h3>
+            <p>Price: $5000</p>
         </div>
-        <div class="snake-item">
-            <h3>Corn Snake</h3>
-            <p>Price: $150</p>
+        <div class="card-item">
+            <h3>Michael Jordan 1986 Fleer</h3>
+            <p>Price: $25,000</p>
         </div>
-        <div class="snake-item">
-            <h3>King Cobra</h3>
-            <p>Price: $1000</p>
+        <div class="card-item">
+            <h3>Kobe Bryant Signed Card</h3>
+            <p>Price: $10,000</p>
         </div>
+    </div>
+
+    <h2>Add a New Card</h2>
+    <div id="cardForm">
+        <input type="text" id="cardName" placeholder="Card Name">
+        <input type="text" id="cardPrice" placeholder="Price">
+        <button onclick="addCard()">Add Card</button>
     </div>
 </div>
 
 <footer>
-    <p>Contact us at <strong>info@snakeemporium.com</strong></p>
+    <p>Contact us at <strong>info@bigtpullz.com</strong></p>
 </footer>
+
+<script>
+    function addCard() {
+        let cardName = document.getElementById("cardName").value;
+        let cardPrice = document.getElementById("cardPrice").value;
+
+        if (cardName && cardPrice) {
+            let newCard = document.createElement("div");
+            newCard.classList.add("card-item");
+            newCard.innerHTML = `<h3>${cardName}</h3><p>Price: ${cardPrice}</p>`;
+
+            document.getElementById("cardsList").appendChild(newCard);
+
+            // Clear input fields
+            document.getElementById("cardName").value = "";
+            document.getElementById("cardPrice").value = "";
+        } else {
+            alert("Please enter both card name and price.");
+        }
+    }
+</script>
 
 </body>
 </html>
